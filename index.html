@@ -43,11 +43,15 @@
     color: pink;
   }
     
-  #copyright {
-	position: relative;
-	margin-left: 15px;
-	vertical-align: bottom;
-	width: 100%;
+  /* Creates a new stacking context on the header */
+#header {
+  position: relative;
+}
+
+/* Positions header-content at the bottom of header's context */
+#header-content {
+  position: absolute;
+  bottom: 0;
 }
     
   </style>
@@ -61,7 +65,12 @@
 
  <footer> flaviu forever studio © 2021 </footer>
     
-  
+  <span id="header-content">some header content</span>
+
+<div style="height:100%; position:relative;">
+    <div style="height:10%; position:absolute; bottom:0px;">bottom</div>
+</div>
+
   
   
 </body>
