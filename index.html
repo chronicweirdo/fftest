@@ -42,17 +42,13 @@
   a:hover {
     color: pink;
   }
-    
-  /* Creates a new stacking context on the header */
-#header {
-  position: relative;
-}
-
-/* Positions header-content at the bottom of header's context */
-#header-content {
-  position: absolute;
-  vertical-align: bottom
-  bottom: 0;
+  #copyright {
+	float: left;
+	padding-bottom: 10px;
+	padding-top: 10px;
+    vertical-align: bottom;
+	bottom: 0px;
+	width: 100%;
 }
     
   </style>
@@ -63,13 +59,10 @@
 <p><a href="mailto:flaviu.cacoveanu@gmail.com">contact me</a></p>
 <p><a href="https://friendsforever.cc/friendsforever.pdf">selected works</a></p>
 
-
+<div id="copyright">
+		flaviu forever studio © 2021
+		</div>
     
-
-<div style="height:100%; position:relative;">
-    <div style="height:10%; position:absolute; bottom:0px;"> flaviu forever studio © 2021 </div>
-</div>
-
   
   
 </body>
