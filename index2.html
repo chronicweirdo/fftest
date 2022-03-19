@@ -13,10 +13,7 @@
   <style>
   body {
     font-size: 0.8em;
-    margin-top: 15px;
-    margin-bottom: 0;
-    margin-left: 15px;
-    margin-right: 15px;
+    margin: 0;
     padding: 0;
     border: 0;
     color: #222;
@@ -46,15 +43,35 @@
     bottom: 0px;
     width: 100%;
     position: fixed;
-  }  
+  }
+  video {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      z-index: -1;
+  }
   </style>
+  <script>
+      function createVideo() {
+          let v = document.createElement("video")
+          v.src = "bo2.webm"
+          v.type = "video/webm"
+          v.autoplay = true
+          v.muted = true
+          return v
+      }
+      window.onload = function() {
+          //let v = document.getElementsByTagName("video")[0]
+          //v.play()
+          let v =  createVideo()
+          document.body.append(v)
+      }
+  </script>
 </head>
 
 <body>
-    <video width="100%">
-        <source src="bo1.webm" type="video/webm">
-        Your browser does not support the video tag.
-    </video>
 <h1>CON&TEMPORARY ARTIST</h1>
 <p><a href="mailto:flaviu.cacoveanu@gmail.com">contact me</a></p>
 <p><a href="https://friendsforever.cc/friendsforever.pdf">selected works</a></p>
