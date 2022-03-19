@@ -54,19 +54,34 @@
   }
   </style>
   <script>
-      function createVideo() {
+      var videos = ["bo2.webm", "bo4.webm", "bo5.webm"]
+      function randomVideoLink() {
+          return videos[Math.floor(Math.random() * videos.length)]
+      }
+      function selectAndPlayVideo() {
+          let v = document.getElementsByTagName("video")[0]
+          let videoLink = randomVideoLink()
+          console.log("playing video " + videoLink)
+          v.src = videoLink
+          v.play()
+      }
+      function createVideoElement() {
           let v = document.createElement("video")
-          v.src = "bo2.webm"
+          //v.src = "bo2.webm"
           v.type = "video/webm"
           v.autoplay = true
           v.muted = true
+          v.onended = () => {
+              selectAndPlayVideo()
+          }
           return v
       }
       window.onload = function() {
           //let v = document.getElementsByTagName("video")[0]
           //v.play()
-          let v =  createVideo()
+          let v =  createVideoElement()
           document.body.append(v)
+          selectAndPlayVideo()
       }
   </script>
 </head>
@@ -75,10 +90,6 @@
 <h1>CON&TEMPORARY ARTIST</h1>
 <p><a href="mailto:flaviu.cacoveanu@gmail.com">contact me</a></p>
 <p><a href="https://friendsforever.cc/friendsforever.pdf">selected works</a></p>
-
-  
-  
-  
 <div id="copyright"><p>flaviu forever studio © <span id="year">2021</span></p></div>
 <script>
     document.getElementById("year").innerHTML = new Date().getFullYear()
